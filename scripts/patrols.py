@@ -791,8 +791,6 @@ class Patrol(object):
                     kit = Cat(status='warrior')
                     game.clan.add_cat(kit)
                     kit.skill = 'formerly a loner'
-                    if randint(0, 1):
-                        kit.name.suffix = ""
                     self.patrol_cats.append(kit)
 
         if self.patrol_event[0] == 44:
@@ -813,7 +811,7 @@ class Patrol(object):
                         kit.specialty2 = choice(scars3)
                     if randint(0, 1):
                         kit.name.prefix = choice(kit.name.loner_names)
-                        if randint(0, 2) > 0:
+                        if randint(0, 2) < 0:
                             kit.name.suffix = ""
                 return
 
