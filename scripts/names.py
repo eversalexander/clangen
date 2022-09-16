@@ -14,6 +14,7 @@ class Name(object):
         "heart", "heart", "heart", "heart", "heart",
 
         # regular suffixes
+<<<<<<< Updated upstream
         "acorn", "ash", "aster", "back", "beam", "bee", "belly", "berry", "bite",
         "bird", "blaze", "blink", "blossom", "bloom", "blotch", "bounce", "branch", "breeze", "briar", "bright",
         "brook", "burr", "bush", "call", "cloud", "clover", "coral", "creek", "cry", "dapple", "daisy",
@@ -29,6 +30,23 @@ class Name(object):
         "stalk", "stem", "step", "stone", "storm", "streak", "stream", "strike", "stripe", "sun",
         "swipe", "swoop", "tail", "tree", "throat", "tuft", "watcher", "water", "whisper",
         "willow", "wind", "wing", "wish"]
+=======
+        "back", "belly",
+        "blaze", "blossom", "blotch", "branch", "breeze", "briar", 
+        "brook", "burr", "cloud", "creek", 
+        "ear", "ears", "eye", "eyes", "face", "fall", "fang",
+        "feather", "fire", "flame", "flight", "flower",
+        "frost", 
+        "jaw", "leaf",
+        "leap", "leg", "mask", "moon", 
+        "nose", "pad", "patch", "petal",
+        "pond", "pool", "run", "runner",
+         "shade", "shadow", "shell", "shine", "sight", "sky", "snow",
+        "song", "speck", "speckle", "spot", "spots", "spring",
+        "stalk", "stem", "step", "stone", "storm", "stream", "strike", "stripe", "sun",
+        "tail", "throat", "tuft", "water", 
+        "willow", "wind", "wing"]
+>>>>>>> Stashed changes
 
     pelt_suffixes = {'TwoColour': ['patch', 'spot', 'splash', 'patch', 'spots'],
                      'Tabby': ['stripe', 'feather', 'leaf', 'stripe', 'shade'],
@@ -104,7 +122,7 @@ class Name(object):
                    "Minnie", "Buddy", "Mollie", "Jaxon", "Dunnock", "Thyme", "Firefly", "Cheese", "Sandwich", "Ivy",
                    "Prickle", "Insect", "Bumble", "Grasshopper", "Coral", "Bee", "Berry", "Soft", "Windy", "Sofa",
                    "Fishtail", "Roman", "Wishbone", "Nova", "Quimby", "Quest", "Nessie", "Niles", "Neil", "Nutella",
-                   "Nakeena", "Nuka", "Hughie", "Harvey", "Herc", "French", "Finch", "Frannie", "Flutie", "Fire",
+                   "Nakeena", "Nuka", "Hughie", "Harvey", "Honey", "French", "Finch", "Frannie", "Flutie", "Fire",
                    "Free", "Glory", "Ginger", "Indi", "Ice", "Igor", "Jupiter", "Juniper", "Jesse", "James", "Jethro",
                    "Joker", "Jinx", "Chaos", "Havoc", "Trouble", "Kingston", "King", "Kip", "Kong", "Ken", "Kendra",
                    "Kisha", "Kermit", "Kelloggs", "Kodiak", "Klondike", "Ketchup", "KD", "Lupo", "Luigi", "Lily",
@@ -117,25 +135,26 @@ class Name(object):
                    "Bently", "Chinook", "Tiny", "Ula", "Union", "Uriel", "Orion", "Oakley", "Roselies", "Belle", "Benny",
                    "Bumblebee", "Bluebell", "Chip", "Chocolate", "Cracker", "Dave", "Dolly", "Egg", "Frito", "Frank",
                    "Gibby", "Jack", "Jenny", "Juliet", "Joob", "John", "Jimmy", "Jude", "Kenny", "Tom", "Oreo", "Mocha",
-                   "Ninja", "Rock", "Pip", "Pipsqueak", "Milque", "Toast", "Molly Murder Mittens", "Vulture", "Raven",
+                   "Ninja", "Rock", "Pip", "Pipsqueak", "Milque", "Toast", "Molly", "Vulture", "Raven",
                    "Sorbet", "Vanilla", "Mint", "Niki", "Nikki", "Pocket", "Tabbytha", "Gravy", "Potato",
-                   "Pumpernickel", "Pecan", "Old Man Sam", "Icecube", "Queso Ruby", "Pearl", "Jasper", "Stan", "Rose",
+                   "Pumpernickel", "Pecan", "Sam", "Icecube", "Queso", "Pearl", "Jasper", "Stan", "Rose",
                    "Mojo", "Kate", "Carmen", "Mange", "Chase", "Socks", "Tabby", "Jay", "Charlie",
                    "Crunchwrap", "Meow-meow", "Bede", "Smores", "Evilface", "Nick", "Mitski", "Ash", "Ah", "Violet",
                    "Alcina", "Worm", "Monika", "Rat", "Bongo", "Bunny", "Viktor", "Steve", "Jewels", "Blu", "Rue",
                    "Stinky", "Garnet", "Anita", "Sloane", "Emi", "Vivienne", "Amber", "Moon", "Twilight", "River",
                    "Glass", "Goose", "Hunter", "Amity", "Stripes", "Cowbell", "Rory", "Lobster", "Slug", "Starfish",
                    "Salmon", "Judy", "Johnny", "Kerry", "Evelyn", "Holly", "Bolt", "Millie", "Jessica", "Laku",
-                   "Dragonfly", "X’ek", "Silva", "Dreamy", "Decay", "Twister", "Shay", "Louis", "Oleander", "Spots",
+                   "Dragonfly", "Perry", "Silva", "Dreamy", "Decay", "Twister", "Shay", "Louis", "Oleander", "Spots",
                    "Cream", "Omlet", "Gizmo", "Feather", "Twix", "Silver,", "Ghost", "Wisp", "Obi Wan", "Pearl,",
-                   "Mango", "Via", "Olivia", "Mr. Whiskers", "Fluffy", "Shimmer", "Mimi", "Melody", "Leon", "Punk",
+                   "Mango", "Via", "Olivia", "Whisker", "Fluffy", "Shimmer", "Mimi", "Melody", "Leon", "Punk", "Will", "Toledo", "Raspberry", "Ohio", "Jeff", "Turnpike", "Car", "Cameron", "Snooze", "Fuzzy", "Minecraft",
                    "Mew", "Fern", "Marceline", "Whisper", "Skrunkly", "Stolas", "Rio", "Steven", "Pear", "Sekhmet",
                    "Mellon", "Ember", "Loona", "Saki", "Tiny", "Sandy", "Miles", "Mini", "Judas", "Zim", "Vinyl",
                    "Rarity", "Trixie", "Sunset", "Anubis", "Armin", "Amy", "Alice", "Alec", "Baphomet", "Bean",
                    "Bastet, Birb", "Bee", "Burm", "Chrissy", "Cherry", "Chief", "Crow", "Carrie", "Calvin", "Cookie",
                    "Catie", "Charm", "Crane", "Crab", "Charles", "Caroline", "Conan", "Cloud", "Charlie", "Cowboy",
                    "Dune", "Dan", "Dove", "Delilah", "Emerald", "Emy", "Erica", " Eddie", "Eda", "Ferret", "Fawn",
-                   "Fallow", "Ferry", "Gamble", "Grain", "Gir", "Heron", "Hop", "Honey", "Hot Sauce", "Habanero"]
+                   "Fallow", "Ferry", "Gamble", "Grain", "Gir", "Heron", "Hop", "Honey", "Hot Sauce", "Habanero", "Skyrim", "Morrowind", "Oblivion", "Fantasy", "Gameboy", "Nintendo", "Sega", "Playstation", "Cranberry", "Steakburger",
+                   "Frenchfry", "Burger", "Hamburger", "Bento", "Miso", "Sushi", "Weed", "Dex", "Benadryl", "Crunchwrap", "Taco", "Stinky", "Bug", "Saxophone"]
         
     if os.path.exists('saves/prefixlist.txt'):
         with open('saves/prefixlist.txt', 'r') as read_file:
