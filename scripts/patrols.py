@@ -744,8 +744,6 @@ class Patrol(object):
                     kit = Cat(status=new_cat_status)
                     game.clan.add_cat(kit)
                     kit.skill = 'formerly a loner'
-                    if randint(0, 1):
-                        kit.name.suffix = ""
                     self.patrol_cats.append(kit)
                 return
 

@@ -588,8 +588,8 @@ class Cat(object):
                     game.cur_events_list.append(
                         str(cat.name) + ' died in an accident at ' + str(cat.moons) + ' moons old')
 
-        if cat.moons > randint(150, 200):  # Cat dies of old age
-            if choice([1, 2, 3, 4, 5, 6]) == 1:
+        if cat.moons > randint(120, 150):  # Cat dies of old age
+            if choice([1, 2, 3, 4]) == 1:
                 cat.dies()
                 if game.cur_events_list is not None:
                     game.cur_events_list.append(
@@ -611,10 +611,11 @@ class Cat(object):
                     chance = 0
                 elif self.all_cats[self.mate].gender != self.gender and self.all_cats[
                     self.mate].age != 'elder':
-                    chance = 25
+                    chance = 20
+                    # randint from 0 to chance decides birth and kits are born iff randint == 1 therefore higher chacne var == lower actual chance of kits
                 elif game.settings['no gendered breeding'] and self.all_cats[
                     self.mate].age != 'elder' and chance is not None:
-                    chance = 25
+                    chance = 40
                 else:
                     chance = 0
             else:
@@ -634,10 +635,10 @@ class Cat(object):
         if chance != 0:
             hit = randint(0, chance)
             if len(game.clan.clan_cats) > 30:
-                hit = randint(0, chance + 20)
+                hit = randint(0, chance + 30)
             elif len(game.clan.clan_cats) < 10:
                 hit = randint(0, chance - 10)
-            kits = choice([1, 1, 2, 2, 3, 3, 4])
+            kits = choice([1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 4])
             if hit == 1 and self.mate is not None:
                 if game.cur_events_list is not None:
                     game.cur_events_list.append(str(self.name) + ' had a litter of ' + str(kits) + ' kit(s)')
