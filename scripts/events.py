@@ -45,8 +45,8 @@ class Events():
                         cat.age = 'adult'
                     elif cat.moons == 100:
                         cat.age = 'elder'
-                    if cat.moons > randint(100, 200):
-                        if choice([1, 2, 3, 4, 5]) == 1 and not cat.dead:
+                    if cat.moons > randint(100, 145):
+                        if choice([1, 2, 3]) == 1 and not cat.dead:
                             cat.dead = True
                             game.cur_events_list.append(f'Rumors reach your clan that the exiled {str(cat.name)} has died recently.')
 
@@ -894,7 +894,7 @@ class Events():
 
         current_lives = int(game.clan.leader_lives)
         #Leader lost a life EVENTS
-        if not int(random.random() * 100) and cat.status == 'leader':  # 1/100
+        if not int(random.random() * 66) and cat.status == 'leader':  # 1/66
             triggered_death = True
             cause_of_death = [
                 f'{name} lost a life after falling into a river',
@@ -938,14 +938,14 @@ class Events():
             game.cur_events_list.append(event_string)
 
         if game.clan.game_mode in ["expanded", "cruel season"] and not triggered_death:
-            if not int(random.random() * 750):  # 1/750
+            if not int(random.random() * 300):  # 1/300
                 triggered_death = True
                 self.handle_deaths_expanded(cat, other_cat)
             else:
                 triggered_death = self.condition_events.handle_injuries(cat, game.clan.current_season, game.clan.biome)
-                if not triggered_death and cat.moons > int(random.random() * 51) + 150:  # cat.moons > 150 <--> 200
+                if not triggered_death and cat.moons > int(random.random() * 51) + 120:  # cat.moons > 120 <--> 200
                     triggered_death = True
-                    if not int(random.random() * 5):  # 1/5
+                    if not int(random.random() * 4):  # 1/4
                         if cat.status != 'leader':
                             cat.die()
                             event_string = f'{cat.name} has passed due to their old age at {cat.moons + 1} moons old.'
@@ -959,7 +959,7 @@ class Events():
                             game.cur_events_list.append(event_string)
                             if SAVE_DEATH:
                                 save_death(cat, event_string)
-                    if cat.status == 'leader' and cat.moons > 269:
+                    if cat.status == 'leader' and cat.moons > 155:
                         game.clan.leader_lives -= 10
                         cat.die()
                         event_string = f'{cat.name} has passed due to their old age at {cat.moons + 1} moons old.'
@@ -1013,7 +1013,7 @@ class Events():
                     ])
                 game.clan.leader_lives -= 10
 
-        elif not int(random.random() * 400): # 1/400
+        elif not int(random.random() * 250): # 1/250
             triggered_death = True
             alive_kits = list(filter(
                 lambda kitty: (kitty.age == "kitten"
@@ -1192,7 +1192,7 @@ class Events():
             cat.die()
             other_cat.die()
         # death with Personalities 
-        elif not random.getrandbits(6):  # 1/64
+        elif not random.getrandbits(5):  # 1/32
             triggered_death = True
             murder_chance = 20
             # murdering leader/deputy
@@ -1311,9 +1311,9 @@ class Events():
                 if SAVE_DEATH:
                     save_death(cat, event_string)
         # extra chance of cat dying to age
-        elif cat.moons > int(random.random() * 51) + 150:  # cat.moons > 150 <--> 200
+        elif cat.moons > int(random.random() * 51) + 120:  # cat.moons > 120 <--> 200
             triggered_death = True
-            if not int(random.random() * 5):  # 1/5
+            if not int(random.random() * 4):  # 1/4
                 if cat.status != 'leader':
                     cat.die()
                     event_string = f'{cat.name} has passed due to their old age at {cat.moons + 1} moons old.'
@@ -1430,9 +1430,9 @@ class Events():
         """
         if game.clan.game_mode in ["expanded", "cruel season"]:
             triggered_death = self.condition_events.handle_illnesses(cat, game.clan.current_season)
-            if not triggered_death and cat.moons > int(random.random() * 51) + 150:  # cat.moons > 150 <--> 200
+            if not triggered_death and cat.moons > int(random.random() * 51) + 120:  # cat.moons > 120 <--> 200
                 triggered_death = True
-                if not int(random.random() * 5):  # 1/5
+                if not int(random.random() * 4):  # 1/4
                     if cat.status != 'leader':
                         cat.die()
                         event_string = f'{cat.name} has passed due to their old age at {cat.moons + 1} moons old.'
@@ -1472,7 +1472,7 @@ class Events():
         
         # leader loses lives
         current_lives = int(game.clan.leader_lives)
-        if not int(random.random() * 100) and cat.status == 'leader': # 1/100
+        if not int(random.random() * 50) and cat.status == 'leader': # 1/50
             triggered_death = True
             if game.clan.current_season in ['Leaf-fall', 'Leaf-bare']:
                 cause_of_death = [
@@ -1486,10 +1486,10 @@ class Events():
                 game.cur_events_list.append(event_string)
                 if SAVE_DEATH:
                     save_death(cat, event_string)
-        elif not int(random.random() * 200) and cat.status == 'leader': # 1/200
+        elif not int(random.random() * 100) and cat.status == 'leader': # 1/100
             triggered_death = True
             lostlives = choice([2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 6])
-            if cat.moons >= 130 and game.clan.current_season in ['Leaf-fall', 'Leaf-bare']:
+            if cat.moons >= 120 and game.clan.current_season in ['Leaf-fall', 'Leaf-bare']:
                 cause_of_death = [
                     f'{name} lost {lostlives} lives due to greencough',
                     f'{name} lost {lostlives} lives due to whitecough',
@@ -1503,7 +1503,7 @@ class Events():
             if SAVE_DEATH:
                 save_death(cat, event_string)
         # normal death
-        elif not int(random.random() * 400): # 1/400
+        elif not int(random.random() * 250): # 1/250
             triggered_death = True
             cause_of_death = []
 
@@ -1555,7 +1555,7 @@ class Events():
             else:
                 triggered_death = False
         # multiple deaths
-        elif not random.getrandbits(9):  # 1/512
+        elif not random.getrandbits(8):  # 1/256
             triggered_death = True
             cause_of_death = []
             if game.clan.current_season == 'Leaf-bare':
@@ -1764,7 +1764,7 @@ class Events():
                 return
 
             if cat.age == 'adolescent':
-                transing_chance = random.getrandbits(8)  # 2/256
+                transing_chance = random.getrandbits(9)  # 2/512
             elif cat.age == 'young adult':
                 transing_chance = random.getrandbits(9)  # 2/512
             else:

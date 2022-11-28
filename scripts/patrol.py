@@ -895,7 +895,7 @@ class Patrol():
             kit.thought = 'Is looking around the camp with wonder'
             if (kit.status == 'elder'):
                 kit.moons = randint(120, 150)
-            if randint(0, 5) == 0:  # chance to keep name
+            if randint(1, 5) == 0:  # chance to keep name
                 kit.name.prefix = choice(names.loner_names)
                 kit.name.suffix = ''
             elif randint(0, 3) == 0: #chance to have kittypet name prefix + suffix
@@ -945,7 +945,7 @@ class Patrol():
                 kit.moons = randint(120, 150)
             if randint(0, 2) == 0:  # chance to add collar
                 kit.accessory = choice(collars)
-            if randint(0, 5) == 0:  # chance to keep name
+            if randint(1, 5) == 0:  # chance to keep name
                 kit.name.prefix = choice(names.loner_names)
                 kit.name.suffix = ''
             elif randint(0, 3) == 0:
@@ -974,7 +974,7 @@ class Patrol():
             kit.thought = 'Is looking around the camp with wonder'
             if (kit.status == 'elder'):
                 kit.moons = randint(120, 150)
-            if randint(0, 5) == 0 and kit.backstory not in ['medicine_cat', 'disgraced']:  # chance to keep name
+            if randint(1, 5) == 0 and kit.backstory not in ['medicine_cat', 'disgraced']:  # chance to keep name
                 # kit.name.prefix = choice(names.loner_names)
                 kit.name.suffix = ''
             elif randint(0, 3) == 0 and kit.backstory not in ['medicine_cat', 'disgraced']:
